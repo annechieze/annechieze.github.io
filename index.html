@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anne Chieze | Psychopraticienne, Hypnothérapeute, Psychanalyste</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Variables de couleurs - Palette apaisante */
+        :root {
+            --primary-color: #5C715E; /* Vert sauge doux */
+            --secondary-color: #F4F1EA; /* Beige chaud */
+            --text-color: #333333; /* Gris foncé pour la lisibilité */
+            --light-text: #666666;
+            --white: #FFFFFF;
+        }
+
+        /* Styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--secondary-color);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Lora', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            margin-left: 30px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #8A9A8B;
+        }
+
+        /* Bouton générique */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #4A5B4C;
+            color: var(--white);
+        }
+
+        /* Section Hero (Accueil) */
+        .hero {
+            /* IMAGE BACKGROUND 
+               Contenu idéal : Un paysage calme (mer, forêt brumeuse, montagne douce), des galets, ou une texture abstraite très claire.
+               Dimensions idéales : 1920x1080 pixels 
+            */
+            background: linear-gradient(rgba(244, 241, 234, 0.8), rgba(244, 241, 234, 0.9)), url('images/background.jpg') center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            color: var(--text-color);
+            margin-bottom: 30px;
+        }
+
+        /* Sections communes */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 15px auto 0;
+        }
+
+        /* Section À Propos */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        /* Section Spécialités */
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .specialty-card {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .specialty-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Section Public & Infos Pratiques */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .info-box {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .info-box ul {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+
+        .info-box ul li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .info-box ul li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Section Contact */
+        .contact-container {
+            background-color: var(--white);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2C352D;
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #A4B4A5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Pour un site simple, on masque le menu sur mobile ou on peut faire un menu hamburger plus tard */
+            }
+            .hero h1 { font-size: 2.2rem; }
+            .hero h2 { font-size: 1.2rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
+            .contact-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Anne Chieze</div>
+            <nav class="nav-links">
+                <a href="#apropos">Qui suis-je ?</a>
+                <a href="#specialites">Mes Spécialités</a>
+                <a href="#infos">Infos Pratiques</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Anne Chieze</h1>
+            <h2>Psychopraticienne, Hypnothérapeute & Psychanalyste</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">Un espace d'écoute bienveillant et sécurisant pour vous accompagner vers le mieux-être et la rencontre avec vous-même.</p>
+            <a href="#contact" class="btn">Prendre rendez-vous</a>
+        </div>
+    </section>
+
+    <section id="apropos">
+        <h2 class="section-title">Qui suis-je ?</h2>
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="images/profile.png" alt="Portrait de Anne Chieze">
+            </div>
+            <div class="about-text">
+                <p>Bienvenue dans mon cabinet. Je vous propose un accompagnement sur-mesure, fondé sur l'écoute active, le non-jugement et la stricte confidentialité.</p>
+                <br>
+                <p>La pluralité de mes approches me permet de m'adapter à vos besoins spécifiques. Que vous traversiez une période de crise, que vous souhaitiez vous libérer d'un blocage profond, ou simplement entamer une démarche de connaissance de soi, nous définissons ensemble le chemin thérapeutique qui vous convient le mieux.</p>
+                <br>
+                <p>Mon objectif est de vous offrir les clés pour puiser dans vos propres ressources, dépasser vos souffrances et retrouver un équilibre de vie serein.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="specialites">
+        <h2 class="section-title">Mes Spécialités</h2>
+        <div class="specialties-grid">
+            <div class="specialty-card">
+                <h3>Psychanalyse</h3>
+                <p>Un travail en profondeur pour explorer votre inconscient. La psychanalyse permet de comprendre l'origine de vos schémas répétitifs, d'apaiser les traumatismes anciens et de redonner du sens à votre histoire personnelle.</p>
+            </div>
+            <div class="specialty-card">
+                <h3>Hypnothérapie</h3>
+                <p>Une approche thérapeutique douce et orientée vers les solutions. L'état de conscience modifiée permet de contourner les blocages conscients pour traiter efficacement les phobies, addictions, angoisses ou troubles du sommeil.</p>
+            </div>
+            <div class="specialty-card">
+                <h3>Psychopratique</h3>
+                <p>Un soutien psychologique régulier par la parole. Je vous accompagne dans la gestion de vos émotions, le dépassement des périodes difficiles (deuil, séparation, burn-out) et le renforcement de votre estime de vous-même.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="infos">
+        <div class="info-grid">
+            <div class="info-box">
+                <h2 style="margin-bottom: 20px;">Pour Qui ?</h2>
+                <p>Mon cabinet est ouvert à tous, à chaque étape de la vie. Les séances s'adaptent à la maturité et aux problématiques de chacun :</p>
+                <ul>
+                    <li><strong>Adultes :</strong> Mal-être, dépression, anxiété, questionnements professionnels ou personnels.</li>
+                    <li><strong>Adolescents :</strong> Période de transition, phobie scolaire, problèmes relationnels, manque de confiance.</li>
+                    <li><strong>Enfants :</strong> Troubles du comportement, peurs, énurésie, séparation des parents.</li>
+                    <li><strong>Couples :</strong> Difficultés de communication, crises, besoin de renouer le dialogue.</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h2 style="margin-bottom: 20px;">Informations Pratiques</h2>
+                <p>Les consultations se font uniquement sur rendez-vous. Elles constituent un espace-temps qui vous est entièrement dédié.</p>
+                <ul>
+                    <li><strong>Durée d'une séance :</strong> Environ 45 à 60 minutes.</li>
+                    <li><strong>Tarif consultation individuelle :</strong> 60 €</li>
+                    <li><strong>Tarif thérapie de couple :</strong> 80 €</li>
+                    <li><strong>Format :</strong> En présentiel au cabinet ou en téléconsultation (visio).</li>
+                </ul>
+                <p style="margin-top: 20px; font-size: 0.9rem; font-style: italic; color: var(--light-text);">
+                    * Les consultations ne sont pas prises en charge par la Sécurité Sociale, mais de nombreuses mutuelles proposent un remboursement. Une facture vous sera délivrée sur demande.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Prendre Rendez-vous</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3 style="margin-bottom: 20px;">Contactez-moi</h3>
+                <p>Pour toute question ou pour fixer un premier rendez-vous, vous pouvez m'appeler, m'envoyer un email ou utiliser le formulaire ci-contre.</p>
+                <br>
+                <p>📍 <strong>Adresse :</strong><br> 12 Avenue des Fleurs, 75000 Paris<br><em>(Code porte: 1234, 2ème étage à gauche)</em></p>
+                <br>
+                <p>📞 <strong>Téléphone :</strong><br> 06 12 34 56 78</p>
+                <br>
+                <p>✉️ <strong>Email :</strong><br> contact@annechieze-therapie.fr</p>
+            </div>
+            
+            <div class="contact-form">
+               <form action="https://formsubmit.co/VOTRE_VRAI_EMAIL@adresse.fr" method="POST">
+                  
+                  <!-- Optionnel : Pour désactiver le captcha par défaut de FormSubmit -->
+                  <input type="hidden" name="_captcha" value="false">
+                  
+                  <!-- Optionnel : Rediriger vers le site après l'envoi (remplacez par votre future URL GitHub) -->
+                  <input type="hidden" name="_next" value="https://votre-pseudo.github.io/nom-du-repo/">
+              
+                  <input type="text" name="nom" placeholder="Votre nom complet" required>
+                  <input type="email" name="email" placeholder="Votre adresse email" required>
+                  <input type="tel" name="telephone" placeholder="Votre numéro de téléphone">
+                  <textarea name="message" placeholder="Votre message ou le motif de votre consultation (optionnel)"></textarea>
+                  <button type="submit" class="btn" style="width: 100%;">Envoyer la demande</button>
+              </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Anne Chieze. Tous droits réservés.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">
+            <a href="#">Mentions Légales</a> | <a href="#">Politique de confidentialité</a>
+        </p>
+    </footer>
+
+</body>
+</html>
