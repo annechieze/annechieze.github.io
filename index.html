@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anne Chieze | Psychopraticienne, Hypnothérapeute, Psychanalyste</title>
     
+    <!-- Importation de polices douces et professionnelles -->
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* Variables de couleurs - Palette apaisante */
+        /* Variables de couleurs - Nouvelle palette inspirée par l'image d'Anne Chieze */
         :root {
-            --primary-color: #5C715E; /* Vert sauge doux */
-            --secondary-color: #F4F1EA; /* Beige chaud */
+            --primary-color: #634B87; /* Lavande/Violet profond et professionnel (les fleurs) */
+            --secondary-color: #F9F7EF; /* Crème/Beige clair (le dessous des fleurs) */
+            --accent-color: #6495ED; /* Bleu ciel clair (les liens, si besoin) */
             --text-color: #333333; /* Gris foncé pour la lisibilité */
             --light-text: #666666;
             --white: #FFFFFF;
@@ -64,6 +66,7 @@
             font-family: 'Lora', serif;
             font-size: 1.5rem;
             font-weight: 600;
+            color: var(--primary-color);
         }
 
         .nav-links a {
@@ -73,7 +76,7 @@
         }
 
         .nav-links a:hover {
-            color: #8A9A8B;
+            color: #8C6A9E; /* Un lavande plus clair pour le hover */
         }
 
         /* Bouton générique */
@@ -90,24 +93,24 @@
         }
 
         .btn:hover {
-            background-color: #4A5B4C;
+            background-color: #4A3366; /* Lavande encore plus profond pour le hover */
             color: var(--white);
         }
 
-        /* Section Hero (Accueil) */
+        /* Section Hero (Accueil) - Mise à jour pour les dimensions de l'image (2688x1028) */
         .hero {
             /* On s'assure que la section prend 100% de la largeur de l'écran (sans déborder) */
             width: 100vw;
             max-width: 100%;
             
-            /* Vous pouvez ajuster cette valeur (ex: 70vh ou 60vh) si vous trouvez 
-               que l'image est trop coupée en haut et en bas à cause de son format très large */
+            /* Ajustement de la hauteur pour ce format très large */
             min-height: 80vh; 
             
-            /* Paramètres de l'image de fond */
-            background-image: linear-gradient(rgba(244, 241, 234, 0.7), rgba(244, 241, 234, 0.8)), url('images/background_1.jpg');
+            /* Paramètres de l'image de fond - mise à jour du voile */
+            /* Nous utilisons le crème secondaire avec un voile lavande très subtil */
+            background-image: linear-gradient(rgba(249, 247, 239, 0.75), rgba(249, 247, 239, 0.85)), url('images/background_1.jpg');
             background-size: cover; /* Étire l'image pour couvrir tout l'espace sans la déformer */
-            background-position: center center; /* Garde le centre de l'image visible */
+            background-position: center bottom; /* Garde le bas de l'image visible, là où sont les fleurs */
             background-repeat: no-repeat;
             
             display: flex;
@@ -271,7 +274,7 @@
 
         /* Footer */
         footer {
-            background-color: #2C352D;
+            background-color: #2D2835; /* Un violet-gris très sombre tiré des fleurs ombrées */
             color: var(--white);
             text-align: center;
             padding: 30px 20px;
@@ -279,14 +282,12 @@
         }
 
         footer a {
-            color: #A4B4A5;
+            color: #C0B0D0; /* Un lavande très clair pour les liens du footer */
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* Pour un site simple, on masque le menu sur mobile ou on peut faire un menu hamburger plus tard */
-            }
+            .nav-links { display: none; }
             .hero h1 { font-size: 2.2rem; }
             .hero h2 { font-size: 1.2rem; }
             .about-grid { grid-template-columns: 1fr; }
