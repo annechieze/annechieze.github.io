@@ -96,12 +96,20 @@
 
         /* Section Hero (Accueil) */
         .hero {
-            /* IMAGE BACKGROUND 
-               Contenu idéal : Un paysage calme (mer, forêt brumeuse, montagne douce), des galets, ou une texture abstraite très claire.
-               Dimensions idéales : 1920x1080 pixels 
-            */
-            background: linear-gradient(rgba(244, 241, 234, 0.4), rgba(244, 241, 234, 0.5)), url('images/background_1.jpg') center/cover;
-            height: 80vh;
+            /* On s'assure que la section prend 100% de la largeur de l'écran (sans déborder) */
+            width: 100vw;
+            max-width: 100%;
+            
+            /* Vous pouvez ajuster cette valeur (ex: 70vh ou 60vh) si vous trouvez 
+               que l'image est trop coupée en haut et en bas à cause de son format très large */
+            min-height: 80vh; 
+            
+            /* Paramètres de l'image de fond */
+            background-image: linear-gradient(rgba(244, 241, 234, 0.7), rgba(244, 241, 234, 0.8)), url('images/background_1.jpg');
+            background-size: cover; /* Étire l'image pour couvrir tout l'espace sans la déformer */
+            background-position: center center; /* Garde le centre de l'image visible */
+            background-repeat: no-repeat;
+            
             display: flex;
             align-items: center;
             text-align: center;
